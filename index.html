@@ -64,6 +64,7 @@ button:hover {
     <input id="num1" type="number"  placeholder="First number">
     <input id="num2" type="number" placeholder="Second number">
     <p id="result">Result: 0</p>
+    <p id="last">Last: -</p>
     <br>
     <button onclick="add()">Add</button>
     <button onclick="sub()">Subtract</button>
@@ -73,42 +74,47 @@ button:hover {
     onclick="clearAll()">Clear</button>
   </div>
   <script>
-    function add() {
-    var a =
-    Number(document.getElementById("num1").value);
-    var b =
-    Number(document.getElementById("num2").value);
-    document.getElementById("result").innerHTML = "Result:" + (a + b);
-    }
-    function sub() {
-    var a =
-    Number(document.getElementById("num1").value);
-    var b =
-    Number(document.getElementById("num2").value);
-    document.getElementById("result").innerHTML = "Result:" + (a-b);
-    }
-    
-    function mul() {
-    var a =
-    Number(document.getElementById("num1").value);
-    var b = 
-    Number(document.getElementById("num2").value);
-    document.getElementById("result").innerHTML = "Result:" + (a*b);
-    }
-    function div() {
-    var a =
-    Number(document.getElementById("num1").value);
-    var b =
-    Number(document.getElementById("num2").value);
-    document.getElementById("result").innerHTML ="Result:" + (a/b);
-    }
-    function clearAll() {
-    var a =
-    document.getElementById("num1").value="";
-    var b =
-    document.getElementById("num2").value="";
-    document.getElementById("result").innerHTML = "Result: 0";
-    }
-  </script>
+function showResult(value) {
+  document.getElementById("last").innerHTML =
+    document.getElementById("result").innerHTML;
+
+  document.getElementById("result").innerHTML = "Result: " + value;
+
+  // auto clear inputs
+  document.getElementById("num1").value = "";
+  document.getElementById("num2").value = "";
+}
+
+function add() {
+  var a = Number(document.getElementById("num1").value);
+  var b = Number(document.getElementById("num2").value);
+  showResult(a + b);
+}
+
+function sub() {
+  var a = Number(document.getElementById("num1").value);
+  var b = Number(document.getElementById("num2").value);
+  showResult(a - b);
+}
+
+function mul() {
+  var a = Number(document.getElementById("num1").value);
+  var b = Number(document.getElementById("num2").value);
+  showResult(a * b);
+}
+
+function div() {
+  var a = Number(document.getElementById("num1").value);
+  var b = Number(document.getElementById("num2").value);
+  showResult(a / b);
+}
+
+function clearAll() {
+  document.getElementById("num1").value = "";
+  document.getElementById("num2").value = "";
+  document.getElementById("result").innerHTML = "Result: 0";
+  document.getElementById("last").innerHTML = "Last: -";
+}
+</script>
 </body>
 </html>
