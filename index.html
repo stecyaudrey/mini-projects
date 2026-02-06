@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+<style>
+  body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+  }
+  .app {
+    background-color: lightblue;
+    width: 300px;
+    padding: 10px;
+    margin: 50px auto;
+    text-align: center;
+    border-radius: 10px;
+  }
+  input {
+    width: 200px;
+    padding: 10px;
+  }
+  button {
+    padding: 10px;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+  <div class="app">
+    <input id="num1" type="number"  placeholder="First number">
+    <input id="num2" type="number" placeholder="Second number">
+    <p id="result">Result: 0</p>
+    <br>
+    <button onclick="add()">Add</button>
+    <button onclick="sub()">Subtract</button>
+    <button onclick="mul()">Multiply</button>
+    <button onclick="div()">Divide</button>
+    <button onclick="clearAll()">Clear</button>
+  </div>
+  <script>
+    function add() {
+    var a =
+    Number(document.getElementById("num1").value);
+    var b =
+    Number(document.getElementById("num2").value);
+    document.getElementById("result").innerHTML = "Result:" + (a + b);
+    }
+    function sub() {
+    var a =
+    Number(document.getElementById("num1").value);
+    var b =
+    Number(document.getElementById("num2").value);
+    document.getElementById("result").innerHTML = "Result:" + (a-b);
+    }
+    
+    function mul() {
+    var a =
+    Number(document.getElementById("num1").value);
+    var b = 
+    Number(document.getElementById("num2").value);
+    document.getElementById("result").innerHTML = "Result:" + (a*b);
+    }
+    function div() {
+    var a =
+    Number(document.getElementById("num1").value);
+    var b =
+    Number(document.getElementById("num2").value);
+    document.getElementById("result").innerHTML ="Result:" + (a/b);
+    }
+    function clearAll() {
+    var a =
+    document.getElementById("num1").value="";
+    var b =
+    document.getElementById("num2").value="";
+    document.getElementById("result").innerHTML = "Result: 0";
+    }
+  </script>
+</body>
+</html>
