@@ -3,30 +3,64 @@
 <head>
   <title>Calculator</title>
 <style>
-  body {
-    background-color: white;
-    font-family: Arial, sans-serif;
-  }
-  .app {
-    background-color: lightblue;
-    width: 300px;
-    padding: 10px;
-    margin: 50px auto;
-    text-align: center;
-    border-radius: 10px;
-  }
-  input {
-    width: 200px;
-    padding: 10px;
-  }
-  button {
-    padding: 10px;
-    margin-top: 10px;
-  }
+body {
+  background: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  background: white;
+  width: 300px;
+  padding: 20px;
+  margin: 60px auto;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 6px;
+  border: none;
+  border-radius: 6px;
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+.clear {
+  background: crimson;
+}
+
+.clear:hover {
+  background: darkred;
+}
+
+#result {
+  font-weight: bold;
+  margin-top: 10px;
+}
 </style>
 </head>
 <body>
   <div class="app">
+    <h2>Mini Calculator</h2>
     <input id="num1" type="number"  placeholder="First number">
     <input id="num2" type="number" placeholder="Second number">
     <p id="result">Result: 0</p>
@@ -35,7 +69,8 @@
     <button onclick="sub()">Subtract</button>
     <button onclick="mul()">Multiply</button>
     <button onclick="div()">Divide</button>
-    <button onclick="clearAll()">Clear</button>
+    <button class="clear"
+    onclick="clearAll()">Clear</button>
   </div>
   <script>
     function add() {
